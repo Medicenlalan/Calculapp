@@ -1,0 +1,135 @@
+#:kivy 2.0
+
+<Ui>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    TextInput:
+        id: entry
+        text: ''
+        font_size: 32
+        size_hint_y: 0.2
+        multiline: False
+
+    GridLayout:
+        cols: 4
+        spacing: 5
+        size_hint_y: 0.8
+
+        # Row 1
+        Button:
+            text: 'C'
+            background_color: 0.83, 0.83, 0.82, 1
+            on_press: app.root.ids.entry.text = ''
+
+        Button:
+            text: '+/-'
+            background_color: 0.83, 0.83, 0.82, 1
+            on_press: app.mas_menos('')
+
+        Button:
+            text: '%'
+            background_color: 0.83, 0.83, 0.82, 1
+            on_press: app.porcentaje('')
+
+        Button:
+            text: '/'
+            background_color: 1, 0.58, 0, 1
+            on_press: app.root.ids.entry.text += '/'
+
+        # Row 2
+        Button:
+            text: '7'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '7'
+
+        Button:
+            text: '8'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '8'
+
+        Button:
+            text: '9'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '9'
+
+        Button:
+            text: '*'
+            background_color: 1, 0.58, 0, 1
+            on_press: app.root.ids.entry.text += '*'
+
+        # Row 3
+        Button:
+            text: '4'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '4'
+
+        Button:
+            text: '5'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '5'
+
+        Button:
+            text: '6'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '6'
+
+        Button:
+            text: '-'
+            background_color: 1, 0.58, 0, 1
+            on_press: app.root.ids.entry.text += '-'
+
+        # Row 4
+        Button:
+            text: '1'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '1'
+
+        Button:
+            text: '2'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '2'
+
+        Button:
+            text: '3'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '3'
+
+        Button:
+            text: '+'
+            background_color: 1, 0.58, 0, 1
+            on_press: app.root.ids.entry.text += '+'
+
+        # Row 5
+        Button:
+            text: '0'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            size_hint_x: 0.5
+            on_press: app.root.ids.entry.text += '0'
+
+        Button:
+            text: '.'
+            background_color: 0.31, 0.31, 0.31, 1
+            color: 1, 1, 1, 1
+            on_press: app.root.ids.entry.text += '.'
+
+        Button:
+            text: '⌫'
+            background_color: 0.83, 0.83, 0.82, 1
+            on_press: app.borrar_uno('')
+
+        Button:
+            text: '='
+            background_color: 1, 0.58, 0, 1
+            on_press: app.operacion(app.root.ids.entry.text)

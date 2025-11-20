@@ -1,0 +1,56 @@
+Cómo instalar e importar Kivy
+
+1) (Opcional) Crear y activar un entorno virtual
+- PowerShell (Windows):
+  python -m venv .venv
+  .\.venv\Scripts\Activate.ps1
+
+- WSL / Linux / macOS:
+  python3 -m venv .venv
+  source .venv/bin/activate
+
+2) Actualizar pip (recomendado)
+- PowerShell / WSL:
+  python -m pip install --upgrade pip setuptools wheel
+
+3) Instalar Kivy
+- Instalación básica (suficiente para desarrollo local):
+  pip install kivy
+
+- Nota: si necesitas extras o dependencias específicas para multimedia/soporte de audio/video, revisa la documentación oficial de Kivy:
+  https://kivy.org/doc/stable/installation/installation.html
+
+4) Verificar la instalación
+- Ejecuta en la terminal:
+  python -c "import kivy; print(kivy.__version__)"
+  Deberías ver la versión instalada sin errores.
+
+5) Ejemplo mínimo de uso (archivo `test_kivy.py`):
+from kivy.app import App
+from kivy.uix.label import Label
+
+class TestApp(App):
+    def build(self):
+        return Label(text='Hola Kivy')
+
+if __name__ == '__main__':
+    TestApp().run()
+
+6) Ejecutar el ejemplo
+- PowerShell / WSL:
+  python test_kivy.py
+
+7) Notas para Buildozer / Android
+- En `buildozer.spec` incluye `requirements = python3,kivy`.
+- Recomendado usar WSL (Ubuntu) para ejecutar Buildozer en Windows:
+  cd /mnt/c/Users/allan/Desktop/calcs
+  buildozer -v android debug
+- Asegúrate de configurar `android.api`, `android.ndk_api` y `android.archs` según la plataforma objetivo.
+
+8) Ruta del proyecto (WSL):
+  /mnt/c/Users/allan/Desktop/calcs
+
+Si quieres, puedo también:
+- Abrir el archivo `import_kivy.txt` en el editor.
+- Añadir estas instrucciones al `README.md` del proyecto.
+- Probar el ejemplo `test_kivy.py` aquí mismo.
